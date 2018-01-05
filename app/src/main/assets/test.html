@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>摄像机测试</title>
+</head>
+<body>
+
+<form action="test_submit" enctype="multipart/form-data">
+    <!--需要调用视频Video-->
+<!--    <input type="file" id="file" accept="video/*"  capture="camcorder" />-->
+    <!--!需要调用摄像机图片-->
+    <input id="imgfile" type="file" accept="image/*" capture="camera"></input>
+    
+    <img  id="img" src="#" alt="显示Image">
+</form>
+
+<script type="text/javascript">
+  <script type="text/javascript">
+      document.querySelector('#imgfile').addEventListener('change', function () {
+      if (this.files && this.files[0]) {
+        var render = new FileReader();
+        alert("1")
+        render.readAsDataURL(this.files[0]);
+        render.setTimeout(alert(render.result), 300)
+      }
+    });
+  </script>
+
+</body>
+</html>
